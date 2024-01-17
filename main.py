@@ -1,8 +1,8 @@
 from flask import Flask, request, abort
 from datetime import datetime
 import sys
-
-sys.path.append('../KEY')
+from config import KEY_PATH
+sys.path.append(KEY_PATH)
 from linebotkey import (
     LINE_ACCESS_TOKEN,
     LINE_WEBHOOK

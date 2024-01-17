@@ -1,7 +1,7 @@
 import google.generativeai as genai
 import sys
-
-sys.path.append('../KEY')
+from config import KEY_PATH
+sys.path.append(KEY_PATH)
 from linebotkey import (
     GOOGLE_API_KEY
 )
