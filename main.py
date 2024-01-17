@@ -1,7 +1,10 @@
 from flask import Flask, request, abort
 from datetime import datetime
 import sys
-from config import KEY_PATH
+from config import (
+    KEY_PATH,
+    MSG_TABLE_NAME
+)
 sys.path.append(KEY_PATH)
 from linebotkey import (
     LINE_ACCESS_TOKEN,
@@ -81,7 +84,7 @@ def handle_message(event):
         message = event.message.text
         img_url = ''
         client.put_item(
-            TableName='LineBot',
+            TableName=MSG_TABLE_NAME,
             Item={
                 'ID': {'S': msg_id},
                 'ChannelID': {'S': chId},
